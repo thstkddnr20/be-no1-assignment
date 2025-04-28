@@ -43,9 +43,7 @@ public class ArithmeticCalculator {
         printBigger(num1);
         printBigger(num2);
 
-        if (result != null) {
-            resultData.add(result);
-        }
+        resultData.add(result);
         return result;
     }
 

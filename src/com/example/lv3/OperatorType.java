@@ -6,35 +6,35 @@ public enum OperatorType {
 
     ADDITION('+'){
         @Override
-        public Double calculate(double a, double b) {
-            return a + b;
+        public double calculate(double a, double b) {
+            return round(a + b);
         }
     },
     SUBTRACTION('-'){
         @Override
-        public Double calculate(double a, double b) {
-            return a - b;
+        public double calculate(double a, double b) {
+            return round(a - b);
         }
     },
     MULTIPLICATION('*'){
         @Override
-        public Double calculate(double a, double b) {
-            return a * b;
+        public double calculate(double a, double b) {
+            return round(a * b);
         }
     },
     DIVISION('/'){
         @Override
-        public Double calculate(double a, double b) {
+        public double calculate(double a, double b) {
             if (b == 0) {
                 throw new ZeroDivisionException();
             }
-            return a / b;
+            return round(a / b);
         }
     };
 
     private final char operator;
 
-    public abstract Double calculate(double a, double b);
+    public abstract double calculate(double a, double b);
 
     OperatorType(char operator) {
         this.operator = operator;
@@ -50,6 +50,11 @@ public enum OperatorType {
         } else {
             return OperatorType.DIVISION;
         }
+    }
+
+    //소수점 셋째 자리 까지 계산
+    protected double round(double d) {
+        return Math.round(d * 1000) / 1000.0;
     }
 
 }
