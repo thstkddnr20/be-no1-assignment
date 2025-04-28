@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ArithmeticCalculator {
-    protected List<Number> resultData;
+    private List<Number> resultData;
 
     public ArithmeticCalculator() {
         this.resultData = new ArrayList<>();
@@ -42,6 +42,10 @@ public class ArithmeticCalculator {
 
         printBigger(num1);
         printBigger(num2);
+
+        if (result.doubleValue() % 1 == 0) {
+            result = result.intValue();
+        }
 
         resultData.add(result);
         return result;
