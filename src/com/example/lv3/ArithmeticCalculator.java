@@ -38,10 +38,10 @@ public class ArithmeticCalculator {
         double num1 = e1.doubleValue();
         double num2 = e2.doubleValue();
 
+        Number result = operator.calculate(num1, num2);
+
         printBigger(num1);
         printBigger(num2);
-
-        Number result = operator.calculate(num1, num2);
 
         if (result != null) {
             resultData.add(result);

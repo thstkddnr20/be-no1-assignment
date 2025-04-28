@@ -1,5 +1,7 @@
 package com.example.lv2;
 
+import com.example.ZeroDivisionException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +35,7 @@ public class Calculator {
             result = i1 * i2;
         } else if (operator == '/'){
             if (i2 == 0) {
-                System.out.println("두번 째 정수가 0일 경우 나머지를 할 수 없습니다");
+                throw new ZeroDivisionException();
             }
             else {
                 result = i1 / i2;

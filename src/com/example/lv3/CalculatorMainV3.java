@@ -1,5 +1,7 @@
 package com.example.lv3;
 
+import com.example.ZeroDivisionException;
+
 import java.util.Scanner;
 
 public class CalculatorMainV3 {
@@ -17,11 +19,11 @@ public class CalculatorMainV3 {
             System.out.print("사칙연산 기호를 입력하세요: ");
             char operator = sc.next().charAt(0);
 
-            Number result = calculator.calculate(d1, d2, OperatorType.getType(operator));
-
-            if (result != null) {
+            try {
+                Number result = calculator.calculate(d1, d2, OperatorType.getType(operator));
                 System.out.println("결과: " + result);
-            } else {
+            } catch (ZeroDivisionException e) {
+                System.out.println(e.getMessage());
                 continue;
             }
 

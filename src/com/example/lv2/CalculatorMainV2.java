@@ -1,5 +1,7 @@
 package com.example.lv2;
 
+import com.example.ZeroDivisionException;
+
 import java.util.Scanner;
 
 public class CalculatorMainV2 {
@@ -22,14 +24,13 @@ public class CalculatorMainV2 {
             System.out.print("사칙연산 기호를 입력하세요: ");
             char operator = sc.next().charAt(0);
 
-            Integer result = calculator.calculate(i1, i2, operator);
-
-            if (result != null) {
+            try {
+                Integer result = calculator.calculate(i1, i2, operator);
                 System.out.println("결과: " + result);
-            } else {
+            } catch (ZeroDivisionException e) {
+                System.out.println(e.getMessage());
                 continue;
             }
-
             //리스트 맨 앞 요소 삭제 가능
             //calculator.removeResult();
 

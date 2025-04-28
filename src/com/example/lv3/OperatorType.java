@@ -1,5 +1,7 @@
 package com.example.lv3;
 
+import com.example.ZeroDivisionException;
+
 public enum OperatorType {
 
     ADDITION('+'){
@@ -24,12 +26,9 @@ public enum OperatorType {
         @Override
         public Double calculate(double a, double b) {
             if (b == 0) {
-                System.out.println("두번 째 정수가 0일 경우 나머지를 할 수 없습니다");
+                throw new ZeroDivisionException();
             }
-            else {
-                return a / b;
-            }
-            return null;
+            return a / b;
         }
     };
 
