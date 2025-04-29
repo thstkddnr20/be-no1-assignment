@@ -27,14 +27,14 @@ public class ArithmeticCalculator {
 
         System.out.println("=== 저장된 값 중 " + num + "보다 더 큰값을 출력합니다 ===");
         resultData.stream()
-                .filter(n -> n.doubleValue() % 1 == 0)
+                .filter(n -> n instanceof Integer)
                 .map(Number::intValue)
                 .filter(i -> i > val)
                 .forEach(System.out::println);
 
         resultData.stream()
+                .filter(n -> n instanceof Double)
                 .map(Number::doubleValue)
-                .filter(d -> d % 1 != 0)
                 .filter(d -> d > val)
                 .forEach(System.out::println);
         System.out.println("=== 출력 종료 ===");
