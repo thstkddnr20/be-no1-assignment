@@ -1,5 +1,6 @@
 package com.example.lv2;
 
+import com.example.OperationSymbolException;
 import com.example.ZeroDivisionException;
 
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class Calculator {
     }
 
     public Integer calculate(int i1, int i2, char operator) {
-        Integer result = null;
+        int result;
 
         if (operator == '+') {
             result = i1 + i2;
@@ -41,12 +42,10 @@ public class Calculator {
                 result = i1 / i2;
             }
         } else {
-            System.out.println("올바른 연산 기호를 입력하세요");
+            throw new OperationSymbolException();
         }
 
-        if (result != null) {
-            resultData.add(result);
-        }
+        resultData.add(result);
         return result;
     }
 }

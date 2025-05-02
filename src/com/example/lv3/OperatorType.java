@@ -1,5 +1,6 @@
 package com.example.lv3;
 
+import com.example.OperationSymbolException;
 import com.example.ZeroDivisionException;
 
 public enum OperatorType {
@@ -47,8 +48,10 @@ public enum OperatorType {
             return OperatorType.SUBTRACTION;
         } else if (c == MULTIPLICATION.operator) {
             return OperatorType.MULTIPLICATION;
-        } else {
+        } else if (c == DIVISION.operator){
             return OperatorType.DIVISION;
+        } else {
+            throw new OperationSymbolException();
         }
     }
 

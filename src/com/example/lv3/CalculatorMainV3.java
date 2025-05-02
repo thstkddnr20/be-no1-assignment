@@ -1,5 +1,6 @@
 package com.example.lv3;
 
+import com.example.OperationSymbolException;
 import com.example.ZeroDivisionException;
 
 import java.util.Scanner;
@@ -22,7 +23,7 @@ public class CalculatorMainV3 {
             try {
                 Number result = calculator.calculate(d1, d2, OperatorType.getType(operator));
                 System.out.println("결과: " + result);
-            } catch (ZeroDivisionException e) {
+            } catch (ZeroDivisionException | OperationSymbolException e) {
                 System.out.println(e.getMessage());
                 continue;
             }
