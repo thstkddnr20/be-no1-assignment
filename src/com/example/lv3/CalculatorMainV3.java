@@ -28,17 +28,12 @@ public class CalculatorMainV3 {
                 continue;
             }
 
-            while (true) {
-                System.out.print("더 계산하시겠습니까? (exit을 입력하여 종료) : ");
-                String s = sc.next();
+            System.out.print("더 계산하시겠습니까? (exit을 입력하여 종료) : ");
+            String s = sc.next();
 
-                if (s.equals("exit")) {
-                    System.exit(1);
-                } else {
-                    break;
-                }
+            if (s.equals("exit")) {
+                break;
             }
-
         }
     }
 }

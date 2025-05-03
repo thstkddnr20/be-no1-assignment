@@ -35,15 +35,11 @@ public class CalculatorMainV2 {
             //리스트 맨 앞 요소 삭제 가능
             //calculator.removeResult();
 
-            while (true) {
-                System.out.print("더 계산하시겠습니까? (exit을 입력하여 종료) : ");
-                String s = sc.next();
+            System.out.print("더 계산하시겠습니까? (exit을 입력하여 종료) : ");
+            String s = sc.next();
 
-                if (s.equals("exit")) {
-                    System.exit(1);
-                } else {
-                    break;
-                }
+            if (s.equals("exit")) {
+                break;
             }
 
         }
